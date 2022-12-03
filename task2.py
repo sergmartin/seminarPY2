@@ -8,8 +8,8 @@ n = int(input("Введите целое число: "))
 
 f = 1
 res = []
-for i in range(n):
-    i = i + 1
+for i in range(1, n+1):
+    
     f = i * f
     res.append(f)
     
