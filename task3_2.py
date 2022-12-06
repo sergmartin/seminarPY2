@@ -19,18 +19,18 @@ import random
 
 m = int(input("Введите количество элементов в списке: "))
 n = []
+
 proiz = []
 for i in range(m):
     n.append(random.randint(1, 10))
 
 
-for i in range(len(n)):
-    while i < len(n)/2 and m > len(n)/2:
-        m = m - 1
-        a = n[i] * n[m]
-        proiz.append(a)
-        i += 1
+for i in range(len(n)//2):
+    proiz.append(n[i] * n[len(n) - i - 1])
 
+if len(n) % 2:
+    proiz.append(n[len(n)//2])
     
+
 print(f"исходный случайный список {n}")
 print(f"список результат {proiz}")
