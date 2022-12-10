@@ -24,7 +24,11 @@ l = list(map(int, input("Введите числа через пробел: ").s
 print(f"Исходный список: {l}")
 new_l = []
 
+"""for i in l:
+    if i not in l:
+        new_l.append(i)"""
 for i in l:
-    if i not in new_l:
+    if l.count(i)==1:
         new_l.append(i)
+
 print(f"Список из неповторяющихся элементов: {new_l}")
