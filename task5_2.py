@@ -29,7 +29,7 @@ my_txt = file.readline()
 file.close()
 txt_compr = my_txt.split()
 
-print(my_txt)
+
 
 def file_encod(txt):
     encond = ''
@@ -49,6 +49,17 @@ def file_encod(txt):
     else:
         encond += str(count) + prev_char
         return encond
+    
+def decoding(txt):
+    number = ''
+    res = ''
+    for i in range(len(txt)):
+        if not txt[i].isalpha():
+            number += txt[i]
+        else:
+            res = res + txt[i] * int(number)
+            number = ''
+    return res
 
 
 txt_compr = file_encod(my_txt)
@@ -56,4 +67,6 @@ txt_compr = file_encod(my_txt)
 file = open('text_code_words.txt', 'w', encoding='UTF-8')
 file.write(f'{txt_compr}')
 file.close()
-print(txt_compr)
+print(f"Текст шифрованный {txt_compr}")
+
+print(f"Текст после дешифровки: {decoding(txt_compr)}")
